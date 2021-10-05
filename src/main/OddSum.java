@@ -16,8 +16,14 @@ public class OddSum {
                 System.out.print(" " + v);
             System.out.println();
         }
+
         for (int i = 0; i < args.length; i++) {
-            listInt.add(Integer.parseInt(args[i]));
+            try {
+                listInt.add(Integer.parseInt(args[i]));
+            } catch (Exception e) {
+                System.err.println(e + " => -1 (= fachlich vorgegebener Fehlercode)");
+                return -1;
+            }
         }
 
         res = sum(listInt);
